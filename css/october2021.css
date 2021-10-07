@@ -1,0 +1,71 @@
+:root{
+    --main-color: #0ff;
+}
+/* start global css */
+a{
+    text-decoration: none;
+    color:#fff
+}
+ul{list-style: none;}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+/* end global css */
+/* start landing section */
+.landing-page{
+    position: relative;
+    min-height: 100vh;
+    background-image: url('../img/bg-image-28.jpg');
+    background-position: center center;
+    background-size: cover;
+}
+.landing-page .overlay{
+    background-color: rgba(0 0 0 / .5);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+}
+.landing-page .header-area{
+    display: flex;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    align-items: center;
+}
+.landing-page .header-area .logo{
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 0 20px;
+    width: 25%;
+}
+.landing-page .header-area .links{
+    width: 100%;
+    text-align: right;
+    padding-right: 20px;
+    padding-left: 0;
+}
+.landing-page .header-area .links .active{color: var(--main-color)}
+.landing-page .header-area .links li{
+    display: inline-block;
+    padding: 0 5px;
+}
+.landing-page .header-area .links li:hover a{
+    color: var(--main-color);
+    transition: .5s ease;
+}
+.landing-page .introText{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+.landing-page .introText h1 {font-size: 3rem;}
+.landing-page .introText span{color: var(--main-color);}
+/* end landing section */
