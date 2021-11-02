@@ -26,8 +26,7 @@ lis.forEach((li) =>
     {
         document.documentElement.style.setProperty("--main-color", e.target.dataset.color);
         localStorage.setItem("colorList", e.target.dataset.color);
-        e.target.parentElement.querySelectorAll(".active").forEach((li) => { li.classList.remove("active"); })
-        e.target.classList.add("active");
+        handleActive(e);
     })
 })
 
@@ -36,7 +35,7 @@ lis.forEach((li) =>
 let landPage = document.querySelector(".landing-page");
 let imgs = ["post-1.jpg", "post-2.jpg", "post-3.jpg", "work-1.jpg", "work-3.jpg", "work-4.jpg", "work-5.jpg"];
 let RanSpans = document.querySelectorAll(".ranBackEl span");
-let bgOption = true;
+let bgOption;
 let ctlInterval;
 function randomizeImgs()
 {
@@ -45,15 +44,18 @@ function randomizeImgs()
         {
             let rndmNum = Math.floor(Math.random() * imgs.length);
             landPage.style.backgroundImage = `url('img/${imgs[rndmNum]}')`;
-        }, 2000)
+        }, 1500)
     }
-}
+};
 
 // localStorage RandBg;
 let bgLocalStorage = localStorage.getItem("bg_option");
 if (bgLocalStorage !== null) {
-    document.querySelectorAll(".ranBackEl span").forEach(span => { span.classList.remove("active"); });
-    if (bgLocalStorage === "true") {
+    RanSpans.forEach((span) =>
+    {
+        span.classList.remove("active");
+    });
+    if (bgLocalStorage === true) {
         bgOption = true;
         document.querySelector(".ranBackEl .yes").classList.add("active");
     } else {
@@ -67,9 +69,8 @@ RanSpans.forEach((span) =>
 {
     span.addEventListener("click", (e) =>
     {
-        e.target.parentElement.querySelectorAll(".active").forEach((span) => { span.classList.remove("active"); })
-        e.target.classList.add("active");
-        if (e.target.dataset.background === 'yes') {
+        handleActive(e); 
+        if (e.target.dataset.background === "yes") {
             bgOption = true;
             randomizeImgs();
             localStorage.setItem("bg_option", true);
@@ -146,6 +147,92 @@ document.addEventListener("click", (e) =>
 })
 
 
+// select all bullets;
+const allBullets = document.querySelectorAll(".nav-bullets .bullet");
+const allLinks = document.querySelectorAll(".links a");
+function scrollToSomeWhere(element)
+{
+    element.forEach((ele) =>
+    {
+        ele.addEventListener("click", (e) =>
+        {
+            document.querySelector(e.target.dataset.section).scrollIntoView({ behavior: 'smooth' });
+        })
+    });
+}
+scrollToSomeWhere(allBullets);
+scrollToSomeWhere(allLinks);
+
+// handleactive states;
+function handleActive(ev)
+{
+    ev.target.parentElement.querySelectorAll(".active").forEach((i) => { i.classList.remove("active"); })
+    ev.target.classList.add("active");
+}  
 
 
+// manage bullets opt;
+let bullOpt = document.querySelectorAll(".bulletsopt span");
+let bullCont = document.querySelector(".nav-bullets");
 
+if (localStorage.getItem("bulletState") != null) {
+    bullOpt.forEach(bull =>
+    {
+        bull.classList.remove("active");
+    })
+    if (localStorage.getItem("bulletState") === "block") {
+        bullCont.style.display = "block";
+        document.querySelector(".bulletsopt .yes").classList.add("active");
+    } else {
+        bullCont.style.display = "none";
+        document.querySelector(".bulletsopt .no").classList.add("active");
+    }
+}
+
+bullOpt.forEach(bull =>
+{
+    bull.addEventListener("click", (e) =>
+    {
+        if (e.target.dataset.display === "yes") {
+            bullCont.style.display = "block";
+            localStorage.setItem("bulletState", e.target.dataset.display);
+        } else {
+            bullCont.style.display = "none";
+            localStorage.setItem("bulletState", e.target.dataset.display);
+        }
+        handleActive(e);
+    });
+});
+
+
+// reset options;
+document.querySelector(".resetOpts").onclick = function ()
+{
+    // localStorage.clear(); this 'll clear all storage, if U need specific one U've to select it.....
+    localStorage.removeItem("bg_option");
+    localStorage.removeItem("colorList");
+    localStorage.removeItem("bulletState");
+
+    window.location.reload();
+};
+
+
+// toggle Ul;
+let toggleBtn = document.querySelector(".toggleUl");
+let linksUl = document.querySelector(".links");
+toggleBtn.onclick = function (e)
+{
+    e.stopPropagation();
+    linksUl.classList.toggle("open");
+};
+
+document.addEventListener("click", e =>
+{
+    if (e.target !== toggleBtn && e.target !== linksUl) {
+        if (linksUl.classList.contains("open")) {
+            linksUl.classList.toggle("open");
+        }
+    }
+});
+
+linksUl.onclick = function (e) { e.stopPropagation() };

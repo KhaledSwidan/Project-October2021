@@ -19,15 +19,15 @@
             <div class="toggle-setting">
                 <i class="fas fa-cog"></i>
             </div>
-            <div class="settings-container" style="margin-top: 50px;">
+            <div class="settings-container">
                 <div class="option-box">
                     <h4>Colors</h4>
                     <ul class="colors-list">
-                        <li data-color="#0ff"></li>
-                        <li data-color="#e91e63"></li>
-                        <li data-color="#009688"></li>
-                        <li data-color="#03a9f4"></li>
-                        <li data-color="#4caf50"></li>
+                        <li data-color="#006363"></li>
+                        <li data-color="#ac1649"></li>
+                        <li data-color="#00645a"></li>
+                        <li data-color="#025e88"></li>
+                        <li data-color="#2b642e"></li>
                     </ul>
                 </div>
                 <div class="option-box">
@@ -37,29 +37,68 @@
                         <span class="no" data-background="no">No</span>
                     </div>
                 </div>
+                <div class="option-box">
+                    <h4>Show Bullets</h4>
+                    <div class="bulletsopt">
+                        <span class="yes active" data-display="yes">Yes</span>
+                        <span class="no" data-display="no">No</span>
+                    </div>
+                </div>
+                <button class="resetOpts">Reset Options</button>
             </div>
         </div>
         <!-- end setting box -->
+
+        <!-- start nav bullets -->
+        <div class="nav-bullets">
+            <div class="bullet" data-section=".about-us">
+                <div class="tooltip">About Us</div>
+            </div>
+            <div class="bullet" data-section=".skills">
+                <div class="tooltip">Our Skills</div>
+            </div>
+            <div class="bullet" data-section=".gallery">
+                <div class="tooltip">Our Gallery</div>
+            </div>
+            <div class="bullet" data-section=".timeline">
+                <div class="tooltip">TimeLine</div>
+            </div>
+            <div class="bullet" data-section=".features">
+                <div class="tooltip">Features</div>
+            </div>
+            <div class="bullet" data-section=".testi">
+                <div class="tooltip">Testimonials</div>
+            </div>
+        </div>
+        <!-- end nav bullets -->
 
         <!-- start landing page -->
         <div class="landing-page">
             <div class="overlay"></div>
             <div class="header-area">
                 <div class="logo">Special Design</div>
-                <ul class="links">
-                    <li><a href="#" class="active">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">contact</a></li>
-                </ul>
-
+                <div class="linksContainer">
+                    <ul class="links">
+                        <li><a data-section=".about-us" class="active">About</a></li>
+                        <li><a data-section=".skills">Skills</a></li>
+                        <li><a data-section=".gallery">Gallery</a></li>
+                        <li><a data-section=".timeline">TimeLine</a></li>
+                        <li><a data-section=".features">Features</a></li>
+                        <li><a data-section=".testi">Testimonials</a></li>
+                    </ul>
+                    <button class="toggleUl">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
             <div class="introText">
                 <h1>We are <span>CREATIVE</span> Agency</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
             </div>
         </div>
-        <!-- send landing page -->
+        <!-- end landing page -->
 
         <!-- start about us -->
         <div class="container">
@@ -211,6 +250,116 @@
             </div>
         </div>
         <!-- end timeline  -->
+
+        <!-- start features -->
+        <div class="features">
+            <h2>Our Features</h2>
+            <div class="container">
+                <div class="collct">
+                    <div class="feat-box">
+                        <img src="img/overlay-bg.jpg" alt="">
+                        <h4>Development</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+
+                    <div class="feat-box">
+                        <img src="img/drawing-basics-intro_900x506.jpg" alt="">
+                        <h4>Development</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+
+                    <div class="feat-box">
+                        <img src="img/overlay-bg.jpg" alt="">
+                        <h4>Development</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+
+                    <div class="feat-box">
+                        <img src="img/drawing-basics-intro_900x506.jpg" alt="">
+                        <h4>Development</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+
+                    <div class="feat-box">
+                        <img src="img/overlay-bg.jpg" alt="">
+                        <h4>Development</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+
+                    <div class="feat-box">
+                        <img src="img/drawing-basics-intro_900x506.jpg" alt="">
+                        <h4>Development</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+                    <div class="clear-fix"></div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- end features -->
+
+        <!-- start testimonials -->
+        <div class="testi">
+            <div class="container">
+                <h2>Testimonials</h2>
+                <div class="testi-box">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, culpa.</p>
+                    <div class="prsn-info">
+                        <img src="https://via.placeholder.com/100/AAA/fff.png" alt="">
+                        <h4>Person Name</h4>
+                        <p>His Position</p>
+                    </div>
+                </div>
+                <div class="testi-box">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, culpa.</p>
+                    <div class="prsn-info">
+                        <img src="https://via.placeholder.com/100/BBB/fff.png" alt="">
+                        <h4>Person Name</h4>
+                        <p>His Position</p>
+                    </div>
+                </div>
+                <div class="testi-box">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, culpa.</p>
+                    <div class="prsn-info">
+                        <img src="https://via.placeholder.com/100/CCC/fff.png" alt="">
+                        <h4>Person Name</h4>
+                        <p>His Position</p>
+                    </div>
+                </div>
+            </div>
+            <div class="clear-fix"></div>
+        </div>
+        <!-- end testimonials -->
+
+        <!-- start contact -->
+        <div class="contact">
+            <div class="overlay"></div>
+            <div class="container">
+                <h2>Contact Us</h2>
+                <form action="">
+                    <div class="left">
+                        <input type="text" name="name" id="firstname" placeholder="Your Name">
+                        <input type="text" name="email" id="email" placeholder="Your Email">
+                        <input type="text" name="mobile" id="mobile" placeholder="Mobile Number">
+                        <input type="text" name="subject" id="subject" placeholder="Subject Title">
+                    </div>
+                    <div class="right">
+                        <textarea name="message" placeholder="Your Message"></textarea>
+                        <input type="submit" name="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- end contact -->
+
+        <!-- start footer -->
+        <div class="footer">
+            <p>
+                Created with Love By <b>Khaled Ahmed Swidan</b> October 2021
+            </p>
+        </div>
+        <!-- end footer -->
         <script src="js/all.min.js"></script>
         <script src="js/october2021.js"></script>
     </body>
